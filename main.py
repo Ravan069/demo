@@ -72,7 +72,7 @@ if raw_text:
     chain, _ = conversation_chain()
 
 # Endpoint to ask a question
-@app.get("/ask/{question}")
+@app.get("/{question}")
 async def ask_question(question: str):
     if not vector_store:
         return {"message": "Please process the PDF first."}
